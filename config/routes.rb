@@ -1,11 +1,25 @@
 Restaurant::Application.routes.draw do
 
-  get 'users/' => 'users#index'
-  # on the left side you establish your URL, 
-  # on the right side you first select your controller name # the name of the method within the controller
+
+#new user registration
+  get '/register' => 'users#newuser'
+  post '/users' => 'users#create'
+
+# user log in
+  get '/signin' => 'sessions#new', as: :sessions
+  post '/signin' => 'sessions#create'
+  delete '/signout' => 'sessions#delete', as: :signout
+
+
+
+
+
+
+
+
+
   
-  get 'users/newuser' => 'users#newuser'
-  post 'users/' => 'users#create'
+
 
 
 

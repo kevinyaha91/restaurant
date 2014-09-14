@@ -7,7 +7,7 @@ class User
   field :email, type: String
   field :password_digest, type: String
 
-att_reader :password
+attr_reader :password
 
 def password=(new_password)
 	self.password_digest = BCrypt::Password.create(new_password)

@@ -1,19 +1,19 @@
-<h1> Register for the stie </h1>
+<h1> Register Your Account </h1>
 
-<div> 
-	<button type="button">Connect through Yelp</button>
-</div>
+<%= form_for @user do |r| %>
+<%= r.label :name %>
+<%= r.text_field :name %>
 
-<h2> OR </h2>
+<%= r.label :email %>
+<%= r.text_field :email %>
 
-<div>
-	<%= form_for @user do |u| %>
-		Name: <%= u.text_field :name %> <br>
-		Password: <%= u.text_field :password %> <br>
-		email: <%= u.text_field :email %> <br>
+<%= r.label :password %>
+<%= r.text_field :password %>
 
-		<%= u.submit "Register" %>
-			<% end %> 
-</div>
+<%= r.submit "Register" %>
+
+
+<% end %>
+
 
 
