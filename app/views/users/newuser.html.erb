@@ -2,15 +2,15 @@
 
 <%= form_for @user do |r| %>
 <%= r.label :name %>
-<%= r.text_field :name %>
+<%= r.text_field :name %> <br>
 
 <%= r.label :email %>
-<%= r.text_field :email %>
+<%= r.text_field :email %> <br>
 
 <%= r.label :password %>
-<%= r.text_field :password %>
+<%= r.text_field :password %> <br>
 
-<%= r.submit "Register" %>
+<%= r.submit "Register", class: "btn btn-primary navbar-btn" %>
 
 
 <% end %>

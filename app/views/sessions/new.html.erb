@@ -4,12 +4,16 @@
 -->
 
 
-<%= form_for(:session, url:sessions_path) do |f| %>
-<%= f.label :email %> <%= f.text_field :email%>
-<%= f.label :password %> <%= f.text_field :password%>
+<%= form_for(:session, url:sessions_path) do |f| %> <br>
+<%= f.label :email %> <%= f.text_field :email%> <br>
+<%= f.label :password %> <%= f.text_field :password%> <br>
 
-<%= f.submit "Sign In" %>
+<%= f.submit "Sign In", class: "btn btn-primary navbar-btn"%>
 
-<%= debug(params) if Rails.env.development? %>
+<% flash.each do |key, value| %>
+<%= value %>
+
+<% end %>
+
 
 <% end %>
