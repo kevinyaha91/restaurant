@@ -1,17 +1,22 @@
 <h1> Register Your Account </h1>
 
+<% @user.errors.messages.each do |k,v| %>
+<ul>
+<%= k %>: <%= v %>
+</ul>
+<%end%>
+
 <%= form_for @user do |r| %>
-<%= r.label :name %>
+<%= r.label :name %> <br>
 <%= r.text_field :name %> <br>
 
-<%= r.label :email %>
+<%= r.label :email %><br>
 <%= r.text_field :email %> <br>
 
-<%= r.label :password %>
+<%= r.label :password %><br>
 <%= r.text_field :password %> <br>
 
 <%= r.submit "Register", class: "btn btn-primary navbar-btn" %>
-
 
 <% end %>
 

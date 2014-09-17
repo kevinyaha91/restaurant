@@ -5,6 +5,8 @@ gem 'rails', '4.0.4'
 
 gem 'mongoid'
 
+gem 'oauth'
+
 gem 'yelp', require: 'yelp'
 
 gem 'bcrypt', '~> 3.1.7'

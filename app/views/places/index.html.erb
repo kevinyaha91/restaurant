@@ -1,0 +1,21 @@
+<h1> Start by searching a restaurant! </h1>
+<nav>
+<%= render partial: "layouts/search" %>
+</nav>
+
+<div class="container">
+<% if @results %>
+
+<% @results.businesses.each do |business| %>
+<div class="box">
+	<img class="pic" src= <%= business.image_url %>><br>
+	<strong>Name</strong>: <%= business.name %> <br>
+	<strong>Address</strong>: <%= business.location.address %> <br>
+	<strong>City</strong>: <%= business.location.city %> <br>
+	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
+	</div>
+
+<% end %>
+<% end %>
+</div>
+

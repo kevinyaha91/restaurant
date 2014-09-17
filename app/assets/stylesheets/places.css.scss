@@ -1,0 +1,27 @@
+// Place all the styles related to the places controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{
+}
+
+.box{
+margin-top: 10px;
+border:solid;
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 30px;
+width: 300px;
+}
+
+.pic{
+	border-radius:50%;
+	border-style:solid;
+	border-width:2px;
+	border-color:white;
+	position:relative
+}
+
+.words{
+	position:relative
+}

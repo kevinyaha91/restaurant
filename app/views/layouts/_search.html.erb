@@ -1,0 +1,14 @@
+
+
+<%= form_for(:search, url:places_path) do |f| %> 
+<%= f.label :keywords %> <%= f.text_field :keywords%>
+<%= f.submit "Search", class: "btn btn-primary navbar-btn" %>
+<% end %>
+
+
+<!-- 
+	1. figure out how to trigger action once .submit>
+	2. how to pass onto the keyword into a method
+	3. should I place the search function within the .rb file or controller file
+
+	-->

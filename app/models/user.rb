@@ -7,6 +7,10 @@ class User
   field :email, type: String
   field :password_digest, type: String
 
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
+  validates :name, presence: true, uniqueness: true
+
 attr_reader :password
 
 def password=(new_password)

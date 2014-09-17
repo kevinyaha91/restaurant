@@ -1,6 +1,5 @@
 Restaurant::Application.routes.draw do
 
-
 #new user registration
   get '/register' => 'users#newuser'
   post '/users' => 'users#create'
@@ -9,6 +8,10 @@ Restaurant::Application.routes.draw do
   get '/signin' => 'sessions#new', as: :sessions
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#delete', as: :signout
+
+  post '/mainpage' => 'places#search', as: :places
+  get '/mainpage' => 'places#index'
+  
 
 
 
