@@ -1,5 +1,7 @@
 Restaurant::Application.routes.draw do
 
+
+  root 'places#index'
 #new user registration
   get '/register' => 'users#newuser'
   post '/users' => 'users#create'
