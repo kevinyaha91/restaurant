@@ -7,6 +7,10 @@ gem 'mongoid'
 
 gem 'oauth'
 
+gem 'autoprefixer-rails'
+
+gem 'rails_12factor', group: :production
+
 gem 'yelp', require: 'yelp'
 
 gem 'bcrypt', '~> 3.1.7'
