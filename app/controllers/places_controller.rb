@@ -11,7 +11,9 @@ def search
 
 		@results = Yelp.client.search('Los Angeles', result)
 
+
 	render "index"
+
 	
 end
 

@@ -13,9 +13,18 @@
 	<strong>Address</strong>: <%= business.location.address %> <br>
 	<strong>City</strong>: <%= business.location.city %> <br>
 	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
+	<strong>Business id</strong>: <%= business.id %><br>
+
+	<%= form_for(:favourite, :url => favourites_path) do |f| %>
+        <%= f.hidden_field :yelp_id, value: business.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit "Add to Favourites" %>
+
+	<% end %>
 	</div>
 
 <% end %>
 <% end %>
+
 </div>
 

@@ -1,7 +1,7 @@
 Restaurant::Application.routes.draw do
 
 
-  root 'places#index'
+
 #new user registration
   get '/register' => 'users#newuser'
   post '/users' => 'users#create'
@@ -9,10 +9,15 @@ Restaurant::Application.routes.draw do
 # user log in
   get '/signin' => 'sessions#new', as: :sessions
   post '/signin' => 'sessions#create'
-  delete '/signout' => 'sessions#delete', as: :signout
+  delete '/signout' => 'sessions#destroy', as: :signout
 
   post '/mainpage' => 'places#search', as: :places
   get '/mainpage' => 'places#index'
+
+#adding a favourite place
+  post '/myfavourite' => 'favourites#create', as: :favourites
+  get '/favouritelist' => 'favourites#index', as: :list
+
   
 
 

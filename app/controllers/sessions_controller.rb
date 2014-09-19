@@ -16,9 +16,9 @@ by looking into the email just inputed within the log session.
 			flash[:error] = 'Username or password incorrect'
 		end
 
-		if user && user.authenticate(params[:sessions][:password])
+		if user && user.authenticate(params[:session][:password])
 			log_in(user)
-			redirect_to
+			redirect_to places_path
 		else
 			flash[:error] ||= 'Try again'
 			render 'new'
@@ -27,7 +27,7 @@ by looking into the email just inputed within the log session.
 
 	def destroy
 		log_out
-		#redirect_to homepage? 
+		redirect_to sessions_path
 	end
 	
 

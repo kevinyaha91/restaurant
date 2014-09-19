@@ -1,0 +1,16 @@
+<h1> List of your Favourites </h1>
+
+<div>
+<% @favourites_list.each do |business| %>
+<div>
+	<img class="pic" src= <%= business.image_url %>><br>
+	<strong>Name</strong>: <%= business.name %> <br>
+	<strong>Address</strong>: <%= business.location.address %> <br>
+	<strong>City</strong>: <%= business.location.city %> <br>
+	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
+
+
+	<% end %>
+	</div>
+	
+</div>

@@ -24,7 +24,7 @@ def log_in(user)
 end
 
 def log_out
-	cookies.delete[:logged_in_id]
+	cookies.delete(:logged_in_id)
 end
 
 def logged_in?

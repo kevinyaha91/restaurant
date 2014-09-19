@@ -12,3 +12,10 @@ users = User.create ([
 	 email: "kevinyaha91@yahoo.com"}
 
 	])
+
+favourites = Favourite.create ([
+	{
+	yelp_id: "BETTER WORK"
+	}
+
+	])
