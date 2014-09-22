@@ -3,7 +3,7 @@ Restaurant::Application.routes.draw do
 
 
 #new user registration
-  get '/register' => 'users#newuser'
+  get '/register' => 'users#newuser', as: :register
   post '/users' => 'users#create'
 
 # user log in

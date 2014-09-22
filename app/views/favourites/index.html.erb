@@ -14,7 +14,15 @@
 	
 	<%= link_to "Delete Favourite",remove_path(business.id), method: :delete %>
 	
+	<% if Place.where(yelp_id: business.id).exists? %>
+		<% @time = Place.find_by(yelp_id: business.id) %>
+		<p> Wait time: <%= @time.wait_time_input %> </p>
+						
+	<% else %>
 
+		<p> Wait time: No information </p>
+
+	<% end %>
 
 	<% end %>
 	</div>
