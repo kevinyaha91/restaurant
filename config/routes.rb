@@ -1,5 +1,6 @@
 Restaurant::Application.routes.draw do
 
+  root :to => "sessions#new"
 
 
 #new user registration
