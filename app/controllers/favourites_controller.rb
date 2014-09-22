@@ -20,5 +20,11 @@ class FavouritesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@favourite = Favourite.find_by(yelp_id: params[:id])
+		@favourite.destroy
+		redirect_to :back
+	end
+
 
 end

@@ -19,8 +19,25 @@
         <%= f.hidden_field :yelp_id, value: business.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Add to Favourites" %>
+	<% end %>
+
+	<%= form_for(:place, :url => wait_path ) do |f| %>
+		<%= f.hidden_field :yelp_id, value: business.id %>
+		
+		<%= f.text_field :wait_time_input, :placeholder => 'wait time input' %>
+		<%= f.submit "Submit Time" %>
+	<% end %>
+
+	<% if Place.where(yelp_id: business.id).exists? %>
+		<% @time = Place.find_by(yelp_id: business.id) %>
+		<p> Wait time: <%= @time.wait_time_input %> </p>
+						
+	<% else %>
+
+		<p> Wait time: No information </p>
 
 	<% end %>
+	
 	</div>
 
 <% end %>

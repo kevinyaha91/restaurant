@@ -1,5 +1,7 @@
 <h1> List of your Favourites </h1>
-
+<nav>
+<%= render partial: "layouts/search" %>
+</nav>
 <div>
 <% @favourites_list.each do |business| %>
 <div>
@@ -8,6 +10,10 @@
 	<strong>Address</strong>: <%= business.location.address %> <br>
 	<strong>City</strong>: <%= business.location.city %> <br>
 	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
+
+	
+	<%= link_to "Delete Favourite",remove_path(business.id), method: :delete %>
+	
 
 
 	<% end %>

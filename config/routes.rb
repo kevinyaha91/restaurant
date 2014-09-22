@@ -17,6 +17,10 @@ Restaurant::Application.routes.draw do
 #adding a favourite place
   post '/myfavourite' => 'favourites#create', as: :favourites
   get '/favouritelist' => 'favourites#index', as: :list
+  delete '/favouritelist/:id' => 'favourites#destroy', as: :remove
+
+#adding a wait time to a place
+  post '/waittime' => 'places#create', as: :wait
 
   
 
