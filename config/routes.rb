@@ -15,6 +15,8 @@ Restaurant::Application.routes.draw do
   post '/mainpage' => 'places#search', as: :places
   get '/mainpage' => 'places#index'
 
+
+
 #adding a favourite place
   post '/myfavourite' => 'favourites#create', as: :favourites
   get '/favouritelist' => 'favourites#index', as: :list
@@ -22,6 +24,9 @@ Restaurant::Application.routes.draw do
 
 #adding a wait time to a place
   post '/waittime' => 'places#create', as: :wait
+
+  post '/nearby' => 'places#nearby', as: :nearby
+  get '/nearby' => 'places#nearby'
 
   
 

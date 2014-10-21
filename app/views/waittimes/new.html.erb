@@ -1,0 +1,14 @@
+<h1>Add a wait time schedule to restaurant</h1>
+
+<%= form_for @waittime do |f| %>
+	<%= f.label :ownerInput8to9 %> 
+	<%= f.select(:ownerInput8to9, WaitTime::WAIT, :id, :name) %>
+
+
+	<%= f.label :ownerInput8to9 %> 
+	<%= f.select(:ownerInput8to9, WaitTime::WAIT, :id, :name) %>
+	
+	<br/>
+
+	<%= f.submit "Create This Schedule" %> 
+<% end %>

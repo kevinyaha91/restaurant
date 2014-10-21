@@ -7,7 +7,11 @@ gem 'mongoid'
 
 gem 'oauth'
 
+gem "geocoder"
+
 gem 'autoprefixer-rails'
+
+gem "paperclip", "~> 4.2"
 
 gem 'rails_12factor', group: :production
 

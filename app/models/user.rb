@@ -25,6 +25,9 @@ end
 
 has_many :favourites
 
+validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+
+
 end
 
 

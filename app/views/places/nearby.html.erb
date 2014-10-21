@@ -4,11 +4,10 @@
 </nav>
 
 
-<body>
 <div class="container">
-<% if @results %>
+<% if @results_location %>
 
-<% @results.businesses.each do |business| %>
+<% @results_location.businesses.each do |business| %>
 <div class="box">
 	<img class="pic" src= <%= business.image_url %>><br>
 	<strong>Name</strong>: <%= business.name %> <br>
@@ -25,8 +24,8 @@
 
 	<%= form_for(:place, :url => wait_path ) do |f| %>
 		<%= f.hidden_field :yelp_id, value: business.id %>
-
-		<%= f.select(:wait_time_input, WaitTime::WAIT, :"15 min", :"30 min", :"1 hour") %>
+		
+		<%= f.text_field :wait_time_input, :placeholder => 'wait time input' %>
 		<%= f.submit "Submit Time" %>
 	<% end %>
 
@@ -46,4 +45,4 @@
 <% end %>
 
 </div>
-</body>
+

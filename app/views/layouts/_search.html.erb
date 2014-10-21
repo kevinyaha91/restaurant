@@ -6,6 +6,42 @@
 <% end %>
 
 
+<input type="submit" value="Places near you" onclick="showlocation()"/> 
+ 
+<br/>
+Latitude: <span id="latitude">..</span> <br>
+Longitude: <span id="longitude">..</span>
+ 
+<SCRIPT>
+function showlocation(){
+    navigator.geolocation.watchPosition(callback);
+}
+function callback(position){
+    var latitude =position.coords.latitude;
+    var longitude =position.coords.longitude;
+    var data = {
+    		coordinates: {
+    			longitude: longitude, 
+    			latitude: latitude
+    		}
+    	};
+    $.ajax({
+		type: "POST",
+		url: "/nearby",
+		data: data,
+		success: function (json){
+			console.log(json);
+			$('#content').text(json);
+		},
+		dataType: "json"
+	});
+}
+
+
+</SCRIPT>
+
+
+
 <!-- 
 	1. figure out how to trigger action once .submit>
 	2. how to pass onto the keyword into a method

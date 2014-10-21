@@ -11,12 +11,19 @@ class PlacesController < ApplicationController
 
 			@results = Yelp.client.search('Los Angeles', result)
 
-
 		render "index"
 
-		
 	end
 
+
+	def nearby
+		@results_location = Yelp.client.search_by_coordinates(params[:coordinates])
+		respond_to do |format|
+    		format.json { render :json => @results_location }
+    		format.html { render 'nearby' }
+  		end
+  		
+	end
 
 
 	def create
