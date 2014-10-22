@@ -25,8 +25,7 @@
 
 	<%= form_for(:place, :url => wait_path ) do |f| %>
 		<%= f.hidden_field :yelp_id, value: business.id %>
-
-		<%= f.select(:wait_time_input, WaitTime::WAIT, :"15 min", :"30 min", :"1 hour") %>
+		<%= f.select( "wait_time_input", WaitTime::WAIT) %>
 		<%= f.submit "Submit Time" %>
 	<% end %>
 
@@ -44,6 +43,7 @@
 
 <% end %>
 <% end %>
-
 </div>
 </body>
+
+

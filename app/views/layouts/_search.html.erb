@@ -9,8 +9,7 @@
 <input type="submit" value="Places near you" onclick="showlocation()"/> 
  
 <br/>
-Latitude: <span id="latitude">..</span> <br>
-Longitude: <span id="longitude">..</span>
+
  
 <SCRIPT>
 function showlocation(){
@@ -30,8 +29,18 @@ function callback(position){
 		url: "/nearby",
 		data: data,
 		success: function (json){
-			console.log(json);
-			$('#content').text(json);
+			for (i=0; i < 5; i++) {
+			console.log(json.businesses[i].name);
+
+			var img = $('<img class="business-picture">');
+			img.attr('src', json.businesses[i].image_url);
+			img.appendTo("#content");
+			//$("p#content").text(json.businesses[i].name);
+			//$("p#content").text(json.businesses[i].location.address);
+			//$("p#content").text(json.businesses[i].location.city);
+			//$("p#content").text(json.businesses[i].rating_img_url_large);
+		}
+		//$("p#content").text(json.businesses[0].name + json.businesses[1].name);
 		},
 		dataType: "json"
 	});
@@ -40,7 +49,13 @@ function callback(position){
 
 </SCRIPT>
 
+<body>
+	<p id="content">
+		show something here
+	</p>
 
+
+</body>
 
 <!-- 
 	1. figure out how to trigger action once .submit>

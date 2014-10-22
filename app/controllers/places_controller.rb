@@ -32,6 +32,7 @@ class PlacesController < ApplicationController
 
 			Place.where(yelp_id: params[:place][:yelp_id]).update(wait_time_input: params[:place][:wait_time_input])
 
+
 			redirect_to places_path
 
 		else
