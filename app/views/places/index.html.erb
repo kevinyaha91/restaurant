@@ -1,6 +1,11 @@
 <h1> Start by searching a restaurant! </h1>
 <nav>
 <%= render partial: "layouts/search" %>
+<% if current_user.business_owner == true %>
+<%= link_to "Add a wait time schedule for my restaurant" %>
+<% end %>
+
+
 </nav>
 
 
@@ -21,6 +26,13 @@
         <%= f.hidden_field :yelp_id, value: business.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Add to Favourites" %>
+	<% end %>
+	
+	<% if current_user.business_owner == true %>
+	<%= form_for(:wait_time, :url => chart_path) do |f| %>
+        <%= f.hidden_field :yelp_id, value: business.id %>
+        <%= f.submit "modify wait chart" %>
+	<% end %>
 	<% end %>
 
 	<%= form_for(:place, :url => wait_path ) do |f| %>

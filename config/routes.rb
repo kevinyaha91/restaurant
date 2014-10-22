@@ -28,7 +28,9 @@ Restaurant::Application.routes.draw do
   post '/nearby' => 'places#nearby', as: :nearby
   get '/nearby' => 'places#nearby'
 
-  
+  post '/wait_time_chart' => 'wait_times#new', as: :chart
+  get '/wait_time_chart' => 'wait_times#new' 
+  post '/wait_times_saved' => 'wait_times#create'
 
 
 

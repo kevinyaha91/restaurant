@@ -17,7 +17,7 @@ class PlacesController < ApplicationController
 
 
 	def nearby
-		@results_location = Yelp.client.search_by_coordinates(params[:coordinates])
+		@results_location = Yelp.client.search_by_coordinates(params[:coordinates], category_filter: 'restaurants')
 		respond_to do |format|
     		format.json { render :json => @results_location }
     		format.html { render 'nearby' }

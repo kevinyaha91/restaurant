@@ -8,7 +8,7 @@ class WaitTime
   WAIT=[10, 20, 30, 60, 90]
 
 
-  field :temporary_wait_input, type: Integer
+  field :prefilter_wait_data, type: Integer
 
   field :ownerInput8to9, type: Integer
   field :ownerInput9to10, type: Integer

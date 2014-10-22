@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
 	def create
 	
-	@user = User.new(params.require(:user).permit(:name, :email, :password))
+	@user = User.new(params.require(:user).permit(:name, :email, :password, :business_owner))
 		if @user.save
 			redirect_to sessions_path
 		else

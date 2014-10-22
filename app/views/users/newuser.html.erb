@@ -18,6 +18,9 @@
 <%= r.label :password %><br>
 <%= r.text_field :password %> <br>
 
+<%= r.label "I am a business owner" %> <br />
+<%= r.check_box :business_owner, {}, true, false %> <br />
+
 <%= r.submit "Register", class: "btn btn-primary navbar-btn" %>
 
 <% end %>
