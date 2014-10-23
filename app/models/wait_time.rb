@@ -14,6 +14,18 @@ class WaitTime
 
 end
 
+#NOTES
+#use time.now.wday to get the value and then store it under the day field)
+#seconds since midnight (if the value within the field )
+#store as a standard time
+#time zone preference!
+
+#option 1: create a new doc everytime a user inputs new information
+
+#option 2: push the wait time into the owner_wait_input, into an array and average it
+
+
+
 # field :offical_time_input
 # field :processed_time
 # field :display_time 

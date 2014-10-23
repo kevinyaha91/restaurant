@@ -8,14 +8,8 @@
 	<%= f.hidden_field :day, value: 1 %>
 	<%= f.hidden_field :seconds_since_midnight, value: 30 %>
 	<%= f.select("owner_wait_input", WaitTime::WAIT) %>	
-	<%= f.hidden_field :yelp_id, value: :yelp_id %>
+	<%= f.hidden_field :yelp_id, value: @place.yelp_id %>
 
 	<%= f.submit "Create This Schedule" %> 
 <% end %>
 <% end %>
-
-<!-- use time.now.wday to get the value and then store it under the day field)
-seconds since midnight (if the value within the field )
-store as a standard time
-
-time zone preference!!! -->
