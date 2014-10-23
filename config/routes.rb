@@ -13,7 +13,7 @@ Restaurant::Application.routes.draw do
   delete '/signout' => 'sessions#destroy', as: :signout
 
   post '/mainpage' => 'places#search', as: :places
-  get '/mainpage' => 'places#index'
+  get '/mainpage' => 'places#index', as: :home
 
 
 
@@ -30,7 +30,7 @@ Restaurant::Application.routes.draw do
 
   post '/wait_time_chart' => 'wait_times#new', as: :chart
   get '/wait_time_chart' => 'wait_times#new' 
-  post '/wait_times_saved' => 'wait_times#create'
+  post '/wait_times_saved' => 'wait_times#create', as: :create
 
 
 

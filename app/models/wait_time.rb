@@ -3,42 +3,14 @@ class WaitTime
   include Mongoid::Document
   include Mongoid::Timestamps::Created
 
+
   embedded_in :place
 
   WAIT=[10, 20, 30, 60, 90]
 
-
-  field :prefilter_wait_data, type: Integer
-
-  field :ownerInput8to9, type: Integer
-  field :ownerInput9to10, type: Integer
-  field :ownerInput10to11, type: Integer
-  field :ownerInput11to12, type: Integer
-  field :ownerInput12to13, type: Integer
-  field :ownerInput13to14, type: Integer
-  field :ownerInput14to15, type: Integer
-  field :ownerInput15to16, type: Integer
-  field :ownerInput16to17, type: Integer
-  field :ownerInput17to18, type: Integer
-  field :ownerInput18to19, type: Integer
-  field :ownerInput19to20, type: Integer
-  field :ownerInput20to21, type: Integer
-
-#should it be array here instead because we are trying to get an average right? for user input
-  field :userInput8to9, type: Integer 
-  field :userInput9to10, type: Integer
-  field :userInput10to11, type: Integer
-  field :userInput11to12, type: Integer
-  field :userInput12to13, type: Integer
-  field :userInput13to14, type: Integer
-  field :userInput14to15, type: Integer
-  field :userInput15to16, type: Integer
-  field :userInput17to18, type: Integer
-  field :userInput18to19, type: Integer
-  field :userInput19to20, type: Integer
-  field :userInput20to21, type: Integer
-
-
+  field :day, type: Integer
+  field :seconds_since_midnight, type: Integer
+  field :owner_wait_input, type: Integer
 
 end
 

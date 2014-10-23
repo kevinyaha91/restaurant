@@ -1,21 +1,20 @@
-class UsersController < ApplicationController
+class WaitTimesController < ApplicationController
 
 	def new
-		@waittime = Waittime.new
+		@place = Place.find_or_initialize_by(yelp_id: params[:wait_time][:yelp_id])
+		@waittime = @place.wait_times.new
 	end
 
 
 	def create
-			@waittime = Waittime.new(params.require(:waittime).permit(:yelp_id, :ownerInput8to9, :ownerInput9to10, :ownerInput10to11, :ownerInput11to12, :ownerInput12to13, :ownerInput13to14, :ownerInput14to15, :ownerInput15to16, :ownerInput16to17, :ownerInput17to18, :ownerInput18to19, :ownerInput19to20, :ownerInput20to21))
-			if @Waittime.save
-				
-			else
-				render 'new'
-			end
-	end
-
-	def prefilter
-
+		@place = Place.find_or_initialize_by(yelp_id: params[:wait_time][:yelp_id])
+		@waittime = @place.wait_times.new(params.require(:wait_time).permit(:day, :seconds_since_midnight, :owner_wait_input))
+		if 
+			@waittime.save
+			redirect_to home_path	
+		else
+			render 'new'
+		end
 	end
 
 end
