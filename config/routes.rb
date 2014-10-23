@@ -23,7 +23,7 @@ Restaurant::Application.routes.draw do
   delete '/favouritelist/:id' => 'favourites#destroy', as: :remove
 
 #adding a wait time to a place
-  post '/waittime' => 'places#create', as: :wait
+  #post '/waittime' => 'places#create', as: :wait
 
   post '/nearby' => 'places#nearby', as: :nearby
   get '/nearby' => 'places#nearby'
@@ -31,6 +31,9 @@ Restaurant::Application.routes.draw do
   post '/wait_time_chart' => 'wait_times#new', as: :chart
   get '/wait_time_chart' => 'wait_times#new' 
   post '/wait_times_saved' => 'wait_times#create', as: :create
+
+  post '/userstat/new' => 'userstats#create', as: :send
+
 
 
 
