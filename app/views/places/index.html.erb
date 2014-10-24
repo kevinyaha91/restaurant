@@ -4,8 +4,6 @@
 <% if current_user.business_owner == true %>
 <%= link_to "Add a wait time schedule for my restaurant" %>
 <% end %>
-
-
 </nav>
 
 
@@ -29,18 +27,16 @@
 	<% end %>
 	
 	<% if current_user.business_owner == true %>
-	<%= form_for(:wait_time, :url => chart_path) do |f| %>
-        <%= f.hidden_field :yelp_id, value: business.id %>
-        <%= f.submit "modify wait chart" %>
-	<% end %>
+	<%= link_to 'modify wait chart', chart_path(yelp_id: business.id) %>
+
 	<% end %>
 
 	<%= form_for(:userstat, :url => send_path ) do |f| %>
 		<%= f.hidden_field :yelp_id, value: business.id %>
 		<%= f.select( "user_wait_input", WaitTime::WAIT) %>
 		<%= f.hidden_field :user_id, value: current_user.id %>
-		<%= f.hidden_field :day, value: 3 %>
-		<%= f.hidden_field :seconds_since_midnight, value: 300 %>
+		<%= f.hidden_field :day, value: Time.now.wday %>
+		<%= f.hidden_field :seconds_since_midnight, value: Time.now.seconds_since_midnight %>
 		<%= f.submit "Submit Time" %>
 	<% end %>
 

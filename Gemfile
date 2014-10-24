@@ -7,6 +7,8 @@ gem 'mongoid'
 
 gem 'oauth'
 
+gem 'pry-rails'
+
 gem "geocoder"
 
 gem 'autoprefixer-rails'

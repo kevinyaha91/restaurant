@@ -1,5 +1,8 @@
 require 'bcrypt'
 
+# p.userstats.where(:seconds_since_midnight.gt => 301).avg(:user_wait_input)
+
+
 
 class User
   include Mongoid::Document
@@ -27,7 +30,6 @@ end
 has_many :favourites
 
 validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-
 
 end
 

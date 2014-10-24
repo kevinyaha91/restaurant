@@ -15,10 +15,27 @@ class WaitTime
 end
 
 #NOTES
-#use time.now.wday to get the value and then store it under the day field)
-#seconds since midnight (if the value within the field )
 #store as a standard time
 #time zone preference!
+
+# if 28800 < Time.now.seconds_since_midnight < 32400
+# wait_time_display = place.where()
+
+#seconds since midnight
+#8am 28800, 
+#9am 32400, 
+#10am 36000, 
+#11am 39600, 
+#12am 43200, 
+#13am 46800, 
+#14am 50400, 
+#15am 54000, 
+#16am 57600, 
+#17am 61200, 
+#18am 64800, 
+#19am 68400, 
+#20am 72000, 
+#21am 75600]
 
 #option 1: create a new doc everytime a user inputs new information
 

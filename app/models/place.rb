@@ -3,7 +3,7 @@ class Place
 
 has_many :favourites
 field :yelp_id, type: String
-embeds_one :wait_time
+embeds_many :wait_times
 embeds_many :userstats
 field :wait_time_input, type: String
 

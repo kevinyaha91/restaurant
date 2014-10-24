@@ -1,20 +1,33 @@
 class WaitTimesController < ApplicationController
 
 	def new
-		@place = Place.find_or_initialize_by(yelp_id: params[:wait_time][:yelp_id])
+		@place = Place.find_or_initialize_by(yelp_id: params[:yelp_id])
 		@waittime = WaitTime.new(place: @place)
 	end
 
 
 	def create
-		@place = Place.find_or_initialize_by(yelp_id: params[:wait_time][:yelp_id])
-		@waittime = WaitTime.new(params.require(:wait_time).permit(:day, :seconds_since_midnight, :owner_wait_input))
-		@waittime.place = @place
-		if @waittime.save
-			redirect_to home_path	
-		else
-			render 'new'
+				# binding.pry
+
+		@place = Place.find_or_initialize_by(yelp_id: params[:yelp_id])
+		params.require(:wait_time).each do |wait_time|
+		    instance = WaitTime.new wait_time.permit( 
+		    	:day, 
+		    	:seconds_since_midnight,
+		    	:owner_wait_input
+		    	)
+		    instance.place = @place
+		    instance.save
 		end
+
+		redirect_to home_path
+		# params.require(:wait_time).each do |waittime|
+
+		# @waittime = WaitTime.new(params.require(:wait_time).permit(:day, :seconds_since_midnight, :owner_wait_input))
+		# @place.wait_times.push @waittime
+
 	end
 
 end
+
+#time.wait_time.where(day: Time.now.wday).exists?
