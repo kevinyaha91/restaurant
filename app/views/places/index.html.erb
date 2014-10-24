@@ -41,14 +41,34 @@
 	<% end %>
 
 
-	 <% if Place.where(yelp_id: business.id).exists? %>
-		<% @time = Place.find_by(yelp_id: business.id) %>
-		<p> Wait time: <%= @time.wait_time_input %> </p>
-				<% else %>
-				<p> nothing here </p>		
+	<% if Place.where(yelp_id: business.id).exists? %>
 
-	<% end %> 
-	
+		<% @time = Place.find_by(yelp_id: business.id) %>
+
+			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+
+				<p> Wait Time (mins): <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
+
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+
+				<p> Wait Time(mins): <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
+
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+
+				<p> Wait Time(mins): <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+
+				<p> No wait time information yet, submit yours! </p> 
+		
+			<% end %> 
+
+	<% else %>
+
+		<p> No wait time information yet, submit yours! </p> 
+
+	<% end %>
+
 	</div>
 
 <% end %>

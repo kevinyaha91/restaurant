@@ -14,14 +14,28 @@
 	
 	<%= link_to "Delete Favourite",remove_path(business.id), method: :delete %>
 	
-	<% if Place.where(yelp_id: business.id).exists? %>
+<% if Place.where(yelp_id: business.id).exists? %>
+
 		<% @time = Place.find_by(yelp_id: business.id) %>
-		<p> Wait time: <%= @time.wait_time_input %> </p>
-						
+
+			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+				<p> Wait Time (mins): <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
+
+			<% elsif %>
+				<% @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+
+				<p> Wait Time(mins): <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
+
+			<% elsif %>
+				<% @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+
+				<p> Wait Time(mins): <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+
 	<% else %>
 
-		<p> Wait time: No information </p>
+		<p> Wait Time: no information yet, submit yours! </p>		
 
+	<% end %> 
 	<% end %>
 
 	<% end %>
