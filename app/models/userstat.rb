@@ -4,7 +4,7 @@ class Userstat
 
   field :user_id, type: String
   field :day, type: Integer
-  field :seconds_since_midnight, type: Integer
+  field :hour_of_day, type: Integer
   field :user_wait_input, type: Integer
 
 

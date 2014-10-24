@@ -7,13 +7,12 @@ class WaitTimesController < ApplicationController
 
 
 	def create
-				# binding.pry
 
 		@place = Place.find_or_initialize_by(yelp_id: params[:yelp_id])
 		params.require(:wait_time).each do |wait_time|
 		    instance = WaitTime.new wait_time.permit( 
 		    	:day, 
-		    	:seconds_since_midnight,
+		    	:hour_of_day,
 		    	:owner_wait_input
 		    	)
 		    instance.place = @place

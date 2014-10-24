@@ -36,24 +36,24 @@
 		<%= f.select( "user_wait_input", WaitTime::WAIT) %>
 		<%= f.hidden_field :user_id, value: current_user.id %>
 		<%= f.hidden_field :day, value: Time.now.wday %>
-		<%= f.hidden_field :seconds_since_midnight, value: Time.now.seconds_since_midnight %>
+		<%= f.hidden_field :hour_of_day, value: Time.now.hour %>
 		<%= f.submit "Submit Time" %>
 	<% end %>
 
-	<% if Place.where(yelp_id: business.id).exists? %>
+
+	 <% if Place.where(yelp_id: business.id).exists? %>
 		<% @time = Place.find_by(yelp_id: business.id) %>
 		<p> Wait time: <%= @time.wait_time_input %> </p>
-						
-	<% else %>
+				<% else %>
+				<p> nothing here </p>		
 
-		<p> Wait time: No information </p>
-
-	<% end %>
+	<% end %> 
 	
 	</div>
 
 <% end %>
 <% end %>
+
 </div>
 </body>
 

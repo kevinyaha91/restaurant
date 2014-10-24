@@ -9,7 +9,7 @@ class WaitTime
   WAIT=[10, 20, 30, 60, 90]
 
   field :day, type: Integer
-  field :seconds_since_midnight, type: Integer
+  field :hour_of_day, type: Integer
   field :owner_wait_input, type: Integer
 
 end

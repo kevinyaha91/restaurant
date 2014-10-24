@@ -2,96 +2,84 @@
 
 <h1>Add a wait time schedule to <%= @place.yelp_id %> </h1>
 
-<%= form_for(:wait_time, :url => create_path) do |f| %>
-	
-
-	<%= f.label :owner_wait_input, "Monday 8-9am" %> 
-	<%= f.hidden_field :day, value: 1 %>
-	<%= f.hidden_field :seconds_since_midnight, value: 30 %>
-	<%= f.select(:owner_wait_input, WaitTime::WAIT) %>	
-	<%= f.hidden_field :yelp_id, value: @place.yelp_id %>
-
-	<%= f.submit "Create This Schedule" %> 
-<% end %>
-
 
 <%= form_tag('/wait_time_chart', method: :post) do %>
 
 	<%= label_tag :owner_wait_input, "Monday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Monday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Monday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 1 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -99,79 +87,79 @@
 
 		<%= label_tag :owner_wait_input, "Tuesday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Tuesday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 2 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -179,79 +167,79 @@
  
  		<%= label_tag :owner_wait_input, "Wednesday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Wednesday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 3 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -259,79 +247,79 @@
  
  		<%= label_tag :owner_wait_input, "Thursday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Thursday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Thursday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 4 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -339,79 +327,79 @@
  
  		<%= label_tag :owner_wait_input, "Friday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Friday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Friday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 5 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -419,79 +407,79 @@
  
  		<%= label_tag :owner_wait_input, "Saturday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Saturday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Saturday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 6 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
@@ -499,79 +487,79 @@
  
  		<%= label_tag :owner_wait_input, "Sunday 9-10am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 32401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 9 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %> </br>
 
 	<%= label_tag :owner_wait_input, "Sunday 10-11am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 36001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 10 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 11-12am" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 39601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 11 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 12-1pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 43201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 12 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 1-2pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 46801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 13 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 2-3pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 50401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 14 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 3-4pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 54001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 15 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 4-5pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 57601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 16 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 5-6pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 61201 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 17 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 6-7pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 64801 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 18 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 7-8pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 68401 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 19 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 8-9pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 72001 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 20 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
 	<%= label_tag :owner_wait_input, "Sunday 9-10pm" %> 
 	<%= hidden_field_tag 'wait_time[][day]', 0 %>
-	<%= hidden_field_tag 'wait_time[][seconds_since_midnight]', 75601 %>
+	<%= hidden_field_tag 'wait_time[][hour_of_day]', 21 %>
 	<%= select_tag('wait_time[][owner_wait_input]', options_for_select(WaitTime::WAIT)) %>	
 	<%= hidden_field_tag 'yelp_id', @place.yelp_id %></br>
 
