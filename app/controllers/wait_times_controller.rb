@@ -13,7 +13,8 @@ class WaitTimesController < ApplicationController
 		    instance = WaitTime.new wait_time.permit( 
 		    	:day, 
 		    	:hour_of_day,
-		    	:owner_wait_input
+		    	:owner_wait_input,
+		    	:user_id
 		    	)
 		    instance.place = @place
 		    instance.save

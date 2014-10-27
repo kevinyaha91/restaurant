@@ -11,6 +11,7 @@ class WaitTime
   field :day, type: Integer
   field :hour_of_day, type: Integer
   field :owner_wait_input, type: Integer
+  field :user_id, type: String
 
 end
 

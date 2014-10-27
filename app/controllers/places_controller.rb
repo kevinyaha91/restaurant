@@ -1,8 +1,11 @@
 class PlacesController < ApplicationController
 
 
+	def index
+  	end
+
 	def search
-		search_keyword = params[:search][:keywords]
+		search_keyword = params[:keywords]
 		result = { term: search_keyword,
 	       limit: 5,
 	       sort: 0,
@@ -21,7 +24,8 @@ class PlacesController < ApplicationController
 		respond_to do |format|
     		format.json { render :json => @results_location }
     		format.html { render 'nearby' }
-  		end
+  	end
+
   		
 	end
 

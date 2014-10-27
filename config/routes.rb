@@ -9,13 +9,11 @@ Restaurant::Application.routes.draw do
 
 # user log in
   get '/signin' => 'sessions#new', as: :sessions
-  post '/signin' => 'sessions#create'
+  post '/signin' => 'sessions#create', as: :login
   delete '/signout' => 'sessions#destroy', as: :signout
 
-  post '/mainpage' => 'places#search', as: :places
   get '/mainpage' => 'places#index', as: :home
-
-
+  get '/search_result' => 'places#search'
 
 #adding a favourite place
   post '/myfavourite' => 'favourites#create', as: :favourites
