@@ -2,10 +2,12 @@
 <nav>
 <%= render partial: "layouts/navbar" %>
 </nav>
+
+<div class="background"></div>
+<div class="resultbox">
 <h1> FAVOURITES </h1>
-<div>
 <% @favourites_list.each do |business| %>
-<div>
+<div class="resulteach">
 	<img class="pic" src= <%= business.image_url %>><br>
 	<strong>Name</strong>: <%= business.name %> <br>
 	<strong>Address</strong>: <%= business.location.address %> <br>

@@ -1,29 +1,35 @@
 
-<div>
-<h1> Register Your Account </h1>
+<nav class="header">
+<h1 class="topic"> Register Your Account </h1>
+</nav>
 
 <% @user.errors.messages.each do |k,v| %>
 <ul>
 <%= k %>: <%= v %>
-</ul>
+</ul> 
 <%end%>
 
+<div class="loginbox">
+
 <%= form_for @user do |r| %>
-<%= r.label :name %> <br>
-<%= r.text_field :name %> <br>
+<%= r.label :name, class: "col-sm-2 control-label"%> <br>
+<%= r.text_field :name, class: "form-control" %> <br>
 
-<%= r.label :email %><br>
-<%= r.text_field :email %> <br>
+<%= r.label :email, class: "col-sm-2 control-label"%><br>
+<%= r.text_field :email, class: "form-control" %> <br>
 
-<%= r.label :password %><br>
-<%= r.text_field :password %> <br>
+<%= r.label :password, class: "col-sm-2 control-label" %><br>
+<%= r.password_field :password, class: "form-control" %> <br>
 
-<%= r.label "I am a business owner" %> <br />
-<%= r.check_box :business_owner, {}, true, false %> <br />
 
-<%= r.submit "Register", class: "btn btn-primary navbar-btn" %>
+<div class="submitbox">
+
+<%= r.label "I am a business owner" %>
+<%= r.check_box :business_owner, {}, true, false %> <br>
+<%= r.submit "Register", class: "btn btn-warning" %>
 
 <% end %>
+</div>
 </div>
 
 

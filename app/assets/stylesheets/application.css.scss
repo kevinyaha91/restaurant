@@ -20,10 +20,40 @@
 @import "places";
 
 .navbar {
-	background-color:#ff8000;
-	color: black;
+	background-color:#ffCC00;
+	padding-left: 25px;
 }
 #my-nav {
 	margin-bottom: 0;
 	border: 0px;
 }
+
+.header{
+	background-color:#ffCC00;
+	height:50px;
+	display:inline-block;
+	width: 100%;
+	z-index: 10;
+}
+
+.topic {
+	text-align: center;
+	color: #6c6c47;
+	width: 100%;
+	font-size: 25px;
+	margin:0 auto;
+	padding-top:7px;
+}
+
+.logo {
+	width:60px;
+	height: 45px;
+	z-index: 99;
+	transform:scale(1.5);
+    -ms-transform:scale(1.5); /* IE 9 */
+    -moz-transform:scale(1.5); /* Firefox */
+    -webkit-transform:scale(1.5); /* Safari and Chrome */
+    -o-transform:scale(1.5); /* Opera */
+}
+
+
