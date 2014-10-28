@@ -18,16 +18,16 @@ by looking into the email just inputed within the log session.
 
 		if user && user.authenticate(params[:session][:password])
 			log_in(user)
-			redirect_to home_path
+			redirect_to home_page_path
 		else
 			flash[:error] ||= 'Try again'
-			render 'new'
+			redirect_to home_page_path
 		end
 	end
 
 	def destroy
 		log_out
-		redirect_to sessions_path
+		redirect_to home_page_path
 	end
 	
 

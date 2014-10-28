@@ -1,7 +1,8 @@
-<h1> List of your Favourites </h1>
+
 <nav>
-<%= render partial: "layouts/search" %>
+<%= render partial: "layouts/navbar" %>
 </nav>
+<h1> FAVOURITES </h1>
 <div>
 <% @favourites_list.each do |business| %>
 <div>
@@ -12,33 +13,38 @@
 	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
 
 	
-	<%= link_to "Delete Favourite",remove_path(business.id), method: :delete %>
 	
 <% if Place.where(yelp_id: business.id).exists? %>
 
 		<% @time = Place.find_by(yelp_id: business.id) %>
 
 			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
-				<p> Wait Time (mins): <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
 
-			<% elsif %>
-				<% @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
 
-				<p> Wait Time(mins): <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 
-			<% elsif %>
-				<% @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
 
-				<p> Wait Time(mins): <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+
+			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+
+				<p> <strong>Wait time(mins)</strong>: No information yet, submit yours! </p> 
+		
+			<% end %> 
 
 	<% else %>
 
-		<p> Wait Time: no information yet, submit yours! </p>		
-
-	<% end %> 
-	<% end %>
+		<p> <strong>Wait time(mins)</strong>: No information yet, submit yours </p> 
 
 	<% end %>
+
+	<%= link_to "Delete Favourite",remove_path(business.id), method: :delete %>
+	<% end %>
+
 	</div>
 	
 </div>

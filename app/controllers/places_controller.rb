@@ -4,6 +4,9 @@ class PlacesController < ApplicationController
 	def index
   	end
 
+  	def front_page
+  	end
+
 	def search
 		search_keyword = params[:keywords]
 		result = { term: search_keyword,

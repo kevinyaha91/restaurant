@@ -1,6 +1,6 @@
 Restaurant::Application.routes.draw do
 
-  root :to => "sessions#new"
+  root :to => "places#front_page"
 
 
 #new user registration
@@ -31,6 +31,8 @@ Restaurant::Application.routes.draw do
   post '/wait_times_saved' => 'wait_times#create', as: :create
 
   post '/userstat/new' => 'userstats#create', as: :send
+
+  get '/front_page' => 'places#front_page', as: :home_page
 
 
 

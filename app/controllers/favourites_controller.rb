@@ -6,7 +6,7 @@ class FavouritesController < ApplicationController
 	def create
 		@favourite = Favourite.new(params.require(:favourite).permit(:yelp_id, :user_id))
 			if @favourite.save 
-				redirect_to places_path
+				redirect_to home_page_path
 			else
 				render 'nothing'
 			end

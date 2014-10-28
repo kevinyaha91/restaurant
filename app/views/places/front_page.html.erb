@@ -1,0 +1,40 @@
+<nav>
+<%= render partial: "layouts/navbar" %>
+</nav>
+
+
+<!Doctype html>
+
+<html>
+<head>
+    <title>###</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <section id="what">
+        <article>
+        <h1>No one likes waiting in line, NO ONE.</h1>   
+        <p><strong>Introducing ____ </strong> </br>
+        Our site provide real time updates on restaurant's wait time. So you know what to expect and never again be horrified by the long line</p>    
+        </article>
+        <div class="parallax" data-velocity="-.3"></div>
+    </section>
+    <section id="how">
+        <article>
+        <h1>How does it work?</h1>   
+        <p><strong>User Input + Restaurant Owner Input</strong> </br>
+        Our site uses advance algorithems to calculate the wait time for a restaurant through collecting data from the restaurant owners and the users. Give it a try by searching a restaurant's name in the search bar below. It is incredibley easy to use!</p>    
+        </article>
+        <div class="parallax" data-velocity="-.1"></div>
+        <div class="parallax" data-velocity="-.5" data-fit="525"></div>
+    </section>
+</header>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../jquery.scrolly.js"></script>
+<script>
+    $(document).ready(function(){
+       $('.parallax').scrolly({bgParallax: true});
+    });
+</script>
+</body>
+</html>

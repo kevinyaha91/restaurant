@@ -1,4 +1,3 @@
-<h1> Start by searching a restaurant! </h1>
 <nav>
 <%= render partial: "layouts/navbar" %>
 </nav>
@@ -17,13 +16,16 @@
 	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
 	<strong>Business id</strong>: <%= business.id %><br>
 
+	<% if logged_in? %>
 	<%= form_for(:favourite, :url => favourites_path) do |f| %>
         <%= f.hidden_field :yelp_id, value: business.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Add to Favourites" %>
 	<% end %>
+	<% end %>
 
-	<% if current_user.business_owner == true %>
+
+	<% if logged_in? == true && current_user.business_owner == true %>
 		<% if Place.where(yelp_id: business.id).exists? == true %>
 			<% @time = Place.find_by(yelp_id: business.id) %>
 				<% if @time.wait_times == [] %>
@@ -40,6 +42,7 @@
 		<!-- do nothing -->
 	<% end %>
 
+	<% if logged_in? %>
 	<%= form_for(:userstat, :url => send_path ) do |f| %>
 		<%= f.hidden_field :yelp_id, value: business.id %>
 		<%= f.select( "user_wait_input", WaitTime::WAIT) %>
@@ -47,6 +50,7 @@
 		<%= f.hidden_field :day, value: Time.now.wday %>
 		<%= f.hidden_field :hour_of_day, value: Time.now.hour %>
 		<%= f.submit "Submit Time" %>
+	<% end %>
 	<% end %>
 
 
@@ -56,25 +60,25 @@
 
 			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 
-				<p> Wait Time (mins): <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
+				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 
-				<p> Wait Time(mins): <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 
-				<p> Wait Time(mins): <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 
-				<p> No wait time information yet, submit yours! </p> 
+				<p> <strong>Wait time(mins)</strong>: No information yet, submit yours! </p> 
 		
 			<% end %> 
 
 	<% else %>
 
-		<p> No wait time information yet, submit yours! </p> 
+		<p> <strong>Wait time(mins)</strong>: No information yet, submit yours </p> 
 
 	<% end %>
 
