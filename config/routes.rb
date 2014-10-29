@@ -12,7 +12,6 @@ Restaurant::Application.routes.draw do
   post '/signin' => 'sessions#create', as: :login
   delete '/signout' => 'sessions#destroy', as: :signout
 
-  get '/mainpage' => 'places#index', as: :home
   get '/search_result' => 'places#search'
 
 #adding a favourite place

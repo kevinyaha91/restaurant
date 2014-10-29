@@ -8,7 +8,7 @@ class UserstatsController < ApplicationController
 		@userstat = Userstat.new(params.require(:userstat).permit(:hour_of_day, :user_wait_input, :day, :user_id))
 		@userstat.place = @place
 		if @userstat.save
-			redirect_to home_path	
+			redirect_to home_page_path	
 		else
 			render 'new'
 		end

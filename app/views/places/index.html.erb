@@ -1,14 +1,12 @@
-<nav>
+
 <%= render partial: "layouts/navbar" %>
-</nav>
-
-
 <body>
-<div class="container">
+<div class="searchbackground">
 <% if @results %>
 
+<div class="foodbox">
 <% @results.businesses.each do |business| %>
-<div class="box">
+
 	<img class="pic" src= <%= business.image_url %>><br>
 	<strong>Name</strong>: <%= business.name %> <br>
 	<strong>Address</strong>: <%= business.location.address %> <br>
@@ -82,10 +80,12 @@
 
 	<% end %>
 
-	</div>
+
 
 <% end %>
 <% end %>
+
+</div>
 
 </div>
 </body>

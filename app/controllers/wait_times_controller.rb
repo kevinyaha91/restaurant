@@ -18,9 +18,10 @@ class WaitTimesController < ApplicationController
 		    	)
 		    instance.place = @place
 		    instance.save
+
 		end
 
-		redirect_to home_path
+		redirect_to home_page_path
 		# params.require(:wait_time).each do |waittime|
 
 		# @waittime = WaitTime.new(params.require(:wait_time).permit(:day, :seconds_since_midnight, :owner_wait_input))

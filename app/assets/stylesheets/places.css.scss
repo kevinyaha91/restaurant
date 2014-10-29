@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container{
+.searchbackground{
+  background-image:asset-url("mouth3.JPG");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:80% 50%;
+  background-attachment: fixed;
+  margin-top:40px;
 }
 
-.box{
-margin-top: 10px;
-border:solid;
-padding-top: 5px;
-padding-bottom: 5px;
-padding-left: 30px;
-width: 400px;
+
+.foodbox{
+    margin-left: 300px;
+    padding-top:30px;
+    width: 350px;
+    text-align: center;
 }
 
 .pic{
@@ -66,8 +71,7 @@ section {
     height: 100vh;
     position:absolute;
     top:0;left:0;
-    width:100%;   
-    margin-top: -20px;
+    width:100%;
 }
 
 section h1{color:white;width:300px;font-size:65px;margin-bottom:14px;}

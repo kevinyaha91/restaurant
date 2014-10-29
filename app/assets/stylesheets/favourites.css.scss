@@ -2,39 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.background {
-	background: url(/assets/bar.JPG);
-    background-size: cover;
+/*.background {
+	background: url(/assets/background.JPG);
+  background-size: cover;
     position:fixed;
     width: 100%;
     height: 100vh;
     left: 0;
     right: 0;
-    -webkit-filter: blur(3px);
-  	-moz-filter: blur(3px);
-  	-o-filter: blur(3px);
-  	-ms-filter: blur(3px);
-  	-filter: blur(3px);
+    margin-right:500px;
   	z-index : 1;
-}
+}*/
+
+
+
 
 .resultbox {
-	z-index : 10;
-	position:absolute;
 	width: 100%;
 	left: 0;
   right: 0;
-  color: white;
-  height: 2000px;
-  display: inline-block;
+  color: black;
+  margin: 0 auto;
+  margin-left: 50px;
+  text-align:center;
+  padding-top: 50px;
+
+  /*background-image: asset-url("background.JPG"); */
+
 }
 
+.navbar {
+  overflow: hidden;
+}
 
-.resulteach {
-  width: 400px;
-  height: 250px;
-  position: relative;
-  float:left; 
-  display:inline; 
-  width: 49%;
+.back {
+  background-image:asset-url("background.JPG");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
