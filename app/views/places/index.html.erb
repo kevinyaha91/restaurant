@@ -4,6 +4,9 @@
 <div class="searchbackground">
 <% if @results %>
 
+
+<!-- this grabs the API return from yelp and then display it after the users conducts a serach -->
+
 <div class="foodbox">
 <% @results.businesses.each do |business| %>
 
@@ -22,6 +25,7 @@
 	<% end %>
 	<% end %>
 
+<!-- allows for owners to input their time, this also make sure that every owner can only input the ownerinput in one restaurant, every restaurant should have only one ownerinput, and one owner cannot make multiple ownerinput into the same restaurant -->
 
 	<% if logged_in? == true && current_user.business_owner == true %>
 		<% if Place.where(yelp_id: business.id).exists? == true %>
@@ -33,13 +37,20 @@
 				<% end %>
 
 		<% else %>
+			<% if Place.where("wait_times.user_id" => current_user.id.to_s).exists? == true %>
+			  <p> you have already modified wait chart for one of the restaurants </p>
+
+			  <% else %>
+
 			<%= link_to 'Modify wait chart for your restaurant', chart_path(yelp_id: business.id) %>
+			<% end %>
 	
 		<% end %>
 	<% else %>
 		<!-- do nothing -->
 	<% end %>
 
+<!-- allows users to input their time -->
 	<% if logged_in? %>
 	<%= form_for(:userstat, :url => send_path ) do |f| %>
 		<%= f.hidden_field :yelp_id, value: business.id %>
@@ -49,9 +60,12 @@
 		<%= f.hidden_field :hour_of_day, value: Time.now.hour %>
 		<%= f.submit "Submit Time" %>
 	<% end %>
+	<% else %>
+	<p> To input your wait time data, you must first create an account and log in </p>
 	<% end %>
 
 
+<!--this code below is for grabbing the right hour of the day and right day of the week to display as wait time. In addition, it is set up so that if there is ONLY userinput then we display userinput, if there is ONLY owner input then display ownerinput, if there are both ownerinput and userinput do an average of the two and display it-->
 	<% if Place.where(yelp_id: business.id).exists? %>
 
 		<% @time = Place.find_by(yelp_id: business.id) %>

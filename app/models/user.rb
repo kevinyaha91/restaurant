@@ -1,9 +1,5 @@
 require 'bcrypt'
 
-# p.userstats.where(:seconds_since_midnight.gt => 301).avg(:user_wait_input)
-# place.wait_times.where(day: Time.now.wday,:seconds_since_midnight.lt => 99999 ).exists?
-
-
 class User
   include Mongoid::Document
   field :name, type: String

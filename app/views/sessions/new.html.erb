@@ -1,8 +1,8 @@
 <nav class="header">
 <h1 class="topic"> Welcome back! </h1>
 </nav>
-<!-- compare the form_for below with the one on newuser.html.erb you will realize that the (:session, url:sessions_path) is extra. this is because without this part. form_for automatically routes you to users_path.
--->
+
+
 <div class="loginbox">
 
 <%= form_for(:session, url:sessions_path, class: "form-horizontal") do |f| %> <br>

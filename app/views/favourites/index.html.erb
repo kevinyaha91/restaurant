@@ -14,6 +14,7 @@
 	<strong>Rattings</strong>: <img src= <%= business.rating_img_url_large %>><br>
 
 	
+<!-- this display the wait time, for a more detailed explaination refer to the comments on the index page for places -->
 	
 <% if Place.where(yelp_id: business.id).exists? %>
 
