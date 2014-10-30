@@ -78,17 +78,17 @@
 			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 	<!-- user input + ownerinput-->
 
-				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %> user+owner</p>
+				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %></p>
 
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 	<!-- ownerinput ONLY-->
 
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %> owner only</p>
-				
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %></p>
+
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
-	<!-- user input ONLY-->
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %> user only</p>
+	<!-- user input ONLY working!-->
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %></p>
 
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
