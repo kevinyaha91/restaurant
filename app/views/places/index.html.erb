@@ -74,19 +74,25 @@
 
 		<% @time = Place.find_by(yelp_id: business.id) %>
 
-			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 
-				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %></p>
+			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+	<!-- user input + ownerinput-->
+
+				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %> user+owner</p>
+
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+	<!-- ownerinput ONLY-->
 
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %></p>
-
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %> owner only</p>
+				
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
+	<!-- user input ONLY-->
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %> user only</p>
 
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %></p>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
+		<!-- no input at all-->
 
 				<p> <strong>Wait time(mins)</strong>: No information yet, submit yours! </p> 
 		
