@@ -10,11 +10,13 @@ embeds_many :userstats
 field :wait_time_input, type: String
 field :verification, type: String
 
+before_create :verify
+
 
 
 
 def verify
-	self.verification = Securerandom.hex(10)
+	self.verification = SecureRandom.hex(10)
 end
 
 def confirm (code)

@@ -72,15 +72,15 @@
 
 			<% if @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 
-				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %>
+				<p> <strong>Wait Time (mins)</strong>: <%= (@time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) + @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input)) / 2 %></p>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %>
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:owner_wait_input) %></p>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == true %>
 
-				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %>
+				<p> <strong>Wait Time(mins)</strong>: <%= @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).avg(:user_wait_input) %></p>
 
 			<% elsif @time.wait_times.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false && @time.userstats.where(day: Time.now.wday, hour_of_day: Time.now.hour).exists? == false %>
 

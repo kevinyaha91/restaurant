@@ -26,13 +26,11 @@ Restaurant::Application.routes.draw do
   get '/nearby' => 'places#nearby'
 
   post '/wait_time_chart' => 'wait_times#create', as: :chart
-  get '/wait_time_chart' => 'wait_times#new' 
-  post '/wait_times_saved' => 'wait_times#create', as: :create
+  get '/wait_time_chart' => 'wait_times#new'
 
   post '/userstat/new' => 'userstats#create', as: :send
 
   get '/front_page' => 'places#front_page', as: :home_page
-
 
 
 
