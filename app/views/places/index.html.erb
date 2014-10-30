@@ -34,7 +34,7 @@
 	<% if logged_in? == true && current_user.business_owner == true %>
 		<% if Place.where(yelp_id: business.id).exists? == true %>
 			<% @time = Place.find_by(yelp_id: business.id) %>
-				<% if @time.wait_times == [] %>
+				<% if @time.wait_times == [] && Place.where("wait_times.user_id" => current_user.id.to_s).exists? == false %>
 					<%= link_to 'Modify wait chart for your restaurant', chart_path(yelp_id: business.id) %>
 				<% else %>
 				 <!-- do nothing -->
