@@ -18,10 +18,14 @@
 	<strong>Business id</strong>: <%= business.id %><br>
 
 	<% if logged_in? %>
+	<% if Favourite.where(:yelp_id => business.id, :user_id => current_user.id.to_s).exists? == true %>
+		<p> Favourited </p>	
+		<% else %>
 	<%= form_for(:favourite, :url => favourites_path) do |f| %>
         <%= f.hidden_field :yelp_id, value: business.id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit "Add to Favourites" %>
+	<% end %>
 	<% end %>
 	<% end %>
 
