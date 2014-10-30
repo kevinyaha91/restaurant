@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .searchbackground{
-  background-image: url("mouth3.JPG");
+  background-image:asset-url("mouth3.JPG");
   background-repeat:no-repeat;
   background-size: cover;
   background-position:80% 50%;
@@ -54,7 +54,7 @@ section {
 }
 
 #how>div:nth-of-type(1) {
-    background-image: url('nozawa.JPG') 50% 0 no-repeat fixed;
+    background: url(/assets/nozawa.JPG) 50% 0 no-repeat fixed;
     background-size: cover;
     margin: 0;
     height: 100vh;
@@ -65,7 +65,7 @@ section {
 
 
 #what>div:nth-of-type(1){
-    background-image: url('photo.JPG') 50% 0 no-repeat fixed;
+    background: url(/assets/photo.JPG) 50% 0 no-repeat fixed;
     background-size: cover;
     margin: 0;
     height: 100vh;
